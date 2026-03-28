@@ -1,0 +1,92 @@
+@keyframes shimmer {
+  0% { background-position: -600px 0; }
+  100% { background-position: 600px 0; }
+}
+
+.skel {
+  background: linear-gradient(
+    90deg,
+    #f0ede8 25%,
+    #e8e4de 50%,
+    #f0ede8 75%
+  );
+  background-size: 600px 100%;
+  animation: shimmer 1.4s infinite linear;
+  border-radius: 2px;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.skelShort {
+  height: 20px;
+  width: 120px;
+  border-radius: 4px;
+}
+
+.body {
+  display: flex;
+  gap: 64px;
+}
+
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.skelLine {
+  height: 16px;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 24px;
+}
+
+.cardSkel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skelImg {
+  aspect-ratio: 5/6;
+  width: 100%;
+  border-radius: 2px;
+}
+
+.skelText {
+  height: 14px;
+  width: 90%;
+}
+
+.skelTextShort {
+  height: 14px;
+  width: 50%;
+}
+
+@media (max-width: 768px) {
+  .wrapper { padding: 24px 16px; }
+  .sidebar { display: none; }
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .grid { grid-template-columns: 1fr; }
+}
