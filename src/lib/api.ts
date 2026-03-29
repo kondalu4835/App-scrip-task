@@ -8,7 +8,7 @@ const DEFAULT_PRODUCTS: Product[] = [
     price: 19.99,
     description: "Comfortable cotton crewneck, available in multiple colors.",
     category: "men's clothing",
-    image: "/images/products/classic-tshirt.png",
+    image: "https://via.placeholder.com/300x300.png?text=Classic+T-Shirt",
     rating: { rate: 4.2, count: 89 },
   },
   {
@@ -17,7 +17,7 @@ const DEFAULT_PRODUCTS: Product[] = [
     price: 49.99,
     description: "Modern cut denim with lightweight stretch.",
     category: "men's clothing",
-    image: "/images/products/slim-fit-jeans.png",
+    image: "https://via.placeholder.com/300x300.png?text=Slim+Fit+Jeans",
     rating: { rate: 4.5, count: 114 },
   },
   {
@@ -26,7 +26,7 @@ const DEFAULT_PRODUCTS: Product[] = [
     price: 64.99,
     description: "Versatile sneakers for everyday wear.",
     category: "shoes",
-    image: "/images/products/everyday-sneakers.png",
+    image: "https://via.placeholder.com/300x300.png?text=Everyday+Sneakers",
     rating: { rate: 4.1, count: 75 },
   },
   {
@@ -35,7 +35,7 @@ const DEFAULT_PRODUCTS: Product[] = [
     price: 129.99,
     description: "Elegant gold necklace for special occasions.",
     category: "jewelery",
-    image: "/images/products/gold-necklace.png",
+    image: "https://via.placeholder.com/300x300.png?text=Gold+Necklace",
     rating: { rate: 4.7, count: 42 },
   },
   {
@@ -44,7 +44,7 @@ const DEFAULT_PRODUCTS: Product[] = [
     price: 39.99,
     description: "Classic silver hoop earrings for everyday wear.",
     category: "jewelery",
-    image: "/images/products/silver-hoop-earrings.png",
+    image: "https://via.placeholder.com/300x300.png?text=Silver+Hoop+Earrings",
     rating: { rate: 4.3, count: 67 },
   },
   {
@@ -53,7 +53,7 @@ const DEFAULT_PRODUCTS: Product[] = [
     price: 199.99,
     description: "Premium leather handbag with spacious compartments.",
     category: "women's clothing",
-    image: "/images/products/leather-handbag.png",
+    image: "https://via.placeholder.com/300x300.png?text=Leather+Handbag",
     rating: { rate: 4.6, count: 51 },
   },
   {
@@ -62,7 +62,7 @@ const DEFAULT_PRODUCTS: Product[] = [
     price: 59.99,
     description: "Lightweight cotton dress perfect for summer.",
     category: "women's clothing",
-    image: "/images/products/cotton-summer-dress.png",
+    image: "https://via.placeholder.com/300x300.png?text=Cotton+Summer+Dress",
     rating: { rate: 4.4, count: 38 },
   },
   {
@@ -71,7 +71,7 @@ const DEFAULT_PRODUCTS: Product[] = [
     price: 89.99,
     description: "Durable sports watch with multiple features.",
     category: "electronics",
-    image: "/images/products/sports-watch.png",
+    image: "https://via.placeholder.com/300x300.png?text=Sports+Watch",
     rating: { rate: 4.0, count: 29 },
   },
   {
@@ -80,7 +80,7 @@ const DEFAULT_PRODUCTS: Product[] = [
     price: 79.99,
     description: "Wireless headphones with excellent sound quality.",
     category: "electronics",
-    image: "/images/products/bluetooth-headphones.png",
+    image: "https://via.placeholder.com/300x300.png?text=Bluetooth+Headphones",
     rating: { rate: 4.5, count: 62 },
   },
   {
@@ -89,7 +89,7 @@ const DEFAULT_PRODUCTS: Product[] = [
     price: 19.99,
     description: "Protective smartphone case with sleek design.",
     category: "electronics",
-    image: "/images/products/smartphone-case.png",
+    image: "https://via.placeholder.com/300x300.png?text=Smartphone+Case",
     rating: { rate: 4.1, count: 45 },
   },
   {
@@ -98,7 +98,7 @@ const DEFAULT_PRODUCTS: Product[] = [
     price: 74.99,
     description: "Lightweight running shoes for all terrains.",
     category: "shoes",
-    image: "/images/products/running-shoes.png",
+    image: "https://via.placeholder.com/300x300.png?text=Running+Shoes",
     rating: { rate: 4.3, count: 56 },
   },
   {
@@ -107,7 +107,7 @@ const DEFAULT_PRODUCTS: Product[] = [
     price: 129.99,
     description: "Elegant leather shoes for formal occasions.",
     category: "shoes",
-    image: "/images/products/formal-leather-shoes.png",
+    image: "https://via.placeholder.com/300x300.png?text=Formal+Leather+Shoes",
     rating: { rate: 4.6, count: 33 },
   },
   {
@@ -116,7 +116,7 @@ const DEFAULT_PRODUCTS: Product[] = [
     price: 89.99,
     description: "Classic denim jacket for casual wear.",
     category: "men's clothing",
-    image: "/images/products/denim-jacket.png",
+    image: "https://via.placeholder.com/300x300.png?text=Denim+Jacket",
     rating: { rate: 4.2, count: 48 },
   },
   {
@@ -125,7 +125,7 @@ const DEFAULT_PRODUCTS: Product[] = [
     price: 29.99,
     description: "Warm wool scarf for cold weather.",
     category: "women's clothing",
-    image: "/images/products/wool-scarf.png",
+    image: "https://via.placeholder.com/300x300.png?text=Wool+Scarf",
     rating: { rate: 4.3, count: 27 },
   },
   {
@@ -134,7 +134,7 @@ const DEFAULT_PRODUCTS: Product[] = [
     price: 59.99,
     description: "Comfortable sneakers for daily casual wear.",
     category: "shoes",
-    image: "/images/products/casual-sneakers.png",
+    image: "https://via.placeholder.com/300x300.png?text=Casual+Sneakers",
     rating: { rate: 4.1, count: 50 },
   },
   {
@@ -143,7 +143,7 @@ const DEFAULT_PRODUCTS: Product[] = [
     price: 149.99,
     description: "Luxury wristwatch with a sophisticated design.",
     category: "electronics",
-    image: "/images/products/elegant-wristwatch.png",
+    image: "https://via.placeholder.com/300x300.png?text=Elegant+Wristwatch",
     rating: { rate: 4.8, count: 22 },
   },
   {
@@ -152,7 +152,7 @@ const DEFAULT_PRODUCTS: Product[] = [
     price: 69.99,
     description: "Soft silk blouse for elegant looks.",
     category: "women's clothing",
-    image: "/images/products/silk-blouse.png",
+    image: "https://via.placeholder.com/300x300.png?text=Silk+Blouse",
     rating: { rate: 4.5, count: 31 },
   },
   {
@@ -161,7 +161,7 @@ const DEFAULT_PRODUCTS: Product[] = [
     price: 39.99,
     description: "Premium leather belt for everyday wear.",
     category: "men's clothing",
-    image: "/images/products/leather-belt.png",
+    image: "https://via.placeholder.com/300x300.png?text=Leather+Belt",
     rating: { rate: 4.2, count: 40 },
   },
   {
@@ -170,7 +170,7 @@ const DEFAULT_PRODUCTS: Product[] = [
     price: 499.99,
     description: "Exquisite diamond ring for special occasions.",
     category: "jewelery",
-    image: "/images/products/diamond-ring.png",
+    image: "https://via.placeholder.com/300x300.png?text=Diamond+Ring",
     rating: { rate: 4.9, count: 15 },
   },
   {
@@ -179,7 +179,7 @@ const DEFAULT_PRODUCTS: Product[] = [
     price: 159.99,
     description: "Warm and stylish winter coat.",
     category: "women's clothing",
-    image: "/images/products/winter-coat.png",
+    image: "https://via.placeholder.com/300x300.png?text=Winter+Coat",
     rating: { rate: 4.6, count: 28 },
   },
 ];
