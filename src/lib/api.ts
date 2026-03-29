@@ -1,3 +1,4 @@
+// src/lib/api.ts
 import { Product } from "@/types";
 
 const DEFAULT_PRODUCTS: Product[] = [
@@ -32,19 +33,19 @@ const DEFAULT_PRODUCTS: Product[] = [
     id: 104,
     title: "Gold Necklace",
     price: 129.99,
-    description: "Elegant gold necklace, perfect for evening wear.",
+    description: "Elegant gold necklace for special occasions.",
     category: "jewelery",
     image: "/images/products/gold-necklace.png",
-    rating: { rate: 4.8, count: 42 },
+    rating: { rate: 4.7, count: 42 },
   },
   {
     id: 105,
     title: "Silver Hoop Earrings",
     price: 39.99,
-    description: "Stylish silver hoop earrings, timeless design.",
+    description: "Classic silver hoop earrings for everyday wear.",
     category: "jewelery",
     image: "/images/products/silver-hoop-earrings.png",
-    rating: { rate: 4.4, count: 30 },
+    rating: { rate: 4.3, count: 67 },
   },
   {
     id: 106,
@@ -53,146 +54,140 @@ const DEFAULT_PRODUCTS: Product[] = [
     description: "Premium leather handbag with spacious compartments.",
     category: "women's clothing",
     image: "/images/products/leather-handbag.png",
-    rating: { rate: 4.7, count: 52 },
+    rating: { rate: 4.6, count: 51 },
   },
   {
     id: 107,
     title: "Cotton Summer Dress",
-    price: 34.99,
-    description: "Lightweight cotton dress, perfect for warm weather.",
+    price: 59.99,
+    description: "Lightweight cotton dress perfect for summer.",
     category: "women's clothing",
     image: "/images/products/cotton-summer-dress.png",
-    rating: { rate: 4.3, count: 60 },
+    rating: { rate: 4.4, count: 38 },
   },
   {
     id: 108,
     title: "Sports Watch",
-    price: 149.99,
-    description: "Water-resistant sports watch with multiple functions.",
+    price: 89.99,
+    description: "Durable sports watch with multiple features.",
     category: "electronics",
     image: "/images/products/sports-watch.png",
-    rating: { rate: 4.6, count: 88 },
+    rating: { rate: 4.0, count: 29 },
   },
   {
     id: 109,
     title: "Bluetooth Headphones",
-    price: 89.99,
-    description: "Noise-cancelling wireless headphones with long battery life.",
+    price: 79.99,
+    description: "Wireless headphones with excellent sound quality.",
     category: "electronics",
     image: "/images/products/bluetooth-headphones.png",
-    rating: { rate: 4.5, count: 101 },
+    rating: { rate: 4.5, count: 62 },
   },
   {
     id: 110,
     title: "Smartphone Case",
     price: 19.99,
-    description: "Durable phone case with shock absorption.",
+    description: "Protective smartphone case with sleek design.",
     category: "electronics",
     image: "/images/products/smartphone-case.png",
-    rating: { rate: 4.0, count: 45 },
+    rating: { rate: 4.1, count: 45 },
   },
   {
     id: 111,
     title: "Running Shoes",
     price: 74.99,
-    description: "Lightweight running shoes with breathable material.",
+    description: "Lightweight running shoes for all terrains.",
     category: "shoes",
     image: "/images/products/running-shoes.png",
-    rating: { rate: 4.2, count: 79 },
+    rating: { rate: 4.3, count: 56 },
   },
   {
     id: 112,
     title: "Formal Leather Shoes",
-    price: 109.99,
+    price: 129.99,
     description: "Elegant leather shoes for formal occasions.",
     category: "shoes",
     image: "/images/products/formal-leather-shoes.png",
-    rating: { rate: 4.5, count: 33 },
+    rating: { rate: 4.6, count: 33 },
   },
   {
     id: 113,
     title: "Denim Jacket",
-    price: 59.99,
-    description: "Classic denim jacket with button closure.",
+    price: 89.99,
+    description: "Classic denim jacket for casual wear.",
     category: "men's clothing",
     image: "/images/products/denim-jacket.png",
-    rating: { rate: 4.1, count: 50 },
+    rating: { rate: 4.2, count: 48 },
   },
   {
     id: 114,
     title: "Wool Scarf",
     price: 29.99,
-    description: "Soft wool scarf, warm and stylish.",
+    description: "Warm wool scarf for cold weather.",
     category: "women's clothing",
     image: "/images/products/wool-scarf.png",
-    rating: { rate: 4.3, count: 22 },
+    rating: { rate: 4.3, count: 27 },
   },
   {
     id: 115,
     title: "Casual Sneakers",
     price: 59.99,
-    description: "Comfortable casual sneakers for everyday wear.",
+    description: "Comfortable sneakers for daily casual wear.",
     category: "shoes",
     image: "/images/products/casual-sneakers.png",
-    rating: { rate: 4.0, count: 67 },
+    rating: { rate: 4.1, count: 50 },
   },
   {
     id: 116,
     title: "Elegant Wristwatch",
-    price: 199.99,
-    description: "Stylish wristwatch with leather strap.",
+    price: 149.99,
+    description: "Luxury wristwatch with a sophisticated design.",
     category: "electronics",
     image: "/images/products/elegant-wristwatch.png",
-    rating: { rate: 4.7, count: 44 },
+    rating: { rate: 4.8, count: 22 },
   },
   {
     id: 117,
     title: "Silk Blouse",
-    price: 39.99,
-    description: "Smooth silk blouse with delicate detailing.",
+    price: 69.99,
+    description: "Soft silk blouse for elegant looks.",
     category: "women's clothing",
     image: "/images/products/silk-blouse.png",
-    rating: { rate: 4.5, count: 29 },
+    rating: { rate: 4.5, count: 31 },
   },
   {
     id: 118,
     title: "Leather Belt",
-    price: 24.99,
-    description: "Durable leather belt with classic buckle.",
+    price: 39.99,
+    description: "Premium leather belt for everyday wear.",
     category: "men's clothing",
     image: "/images/products/leather-belt.png",
-    rating: { rate: 4.3, count: 41 },
+    rating: { rate: 4.2, count: 40 },
   },
   {
     id: 119,
     title: "Diamond Ring",
     price: 499.99,
-    description: "Elegant diamond ring with white gold band.",
+    description: "Exquisite diamond ring for special occasions.",
     category: "jewelery",
     image: "/images/products/diamond-ring.png",
-    rating: { rate: 4.9, count: 12 },
+    rating: { rate: 4.9, count: 15 },
   },
   {
     id: 120,
     title: "Winter Coat",
-    price: 149.99,
-    description: "Warm winter coat with insulated lining.",
+    price: 159.99,
+    description: "Warm and stylish winter coat.",
     category: "women's clothing",
     image: "/images/products/winter-coat.png",
-    rating: { rate: 4.4, count: 37 },
+    rating: { rate: 4.6, count: 28 },
   },
 ];
 
-const DEFAULT_CATEGORIES = [
-  "men's clothing",
-  "women's clothing",
-  "jewelery",
-  "electronics",
-  "shoes",
-];
+const DEFAULT_CATEGORIES = ["men's clothing", "women's clothing", "jewelery", "electronics"];
 
 export async function getAllProducts(): Promise<Product[]> {
-  // Since we removed API, just return default products
+  // No API calls, return local products
   return DEFAULT_PRODUCTS;
 }
 
@@ -206,44 +201,10 @@ export async function getProductsByCategory(category: string): Promise<Product[]
 
 export function formatPrice(price: number | string | undefined | null): string {
   const value = Number(price);
-  if (Number.isNaN(value)) {
-    return "--";
-  }
-
+  if (Number.isNaN(value)) return "--";
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
     minimumFractionDigits: 2,
   }).format(value);
-}
-
-export function buildProductSchema(products: Product[]) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    name: "Women's Fashion Collection",
-    description: "Curated women's fashion — clothing, jewellery and accessories",
-    numberOfItems: products.length,
-    itemListElement: products.slice(0, 10).map((p, i) => ({
-      "@type": "ListItem",
-      position: i + 1,
-      item: {
-        "@type": "Product",
-        name: p.title,
-        description: p.description,
-        image: p.image,
-        offers: {
-          "@type": "Offer",
-          price: p.price.toFixed(2),
-          priceCurrency: "USD",
-          availability: "https://schema.org/InStock",
-        },
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: p.rating.rate,
-          reviewCount: p.rating.count,
-        },
-      },
-    })),
-  };
 }
