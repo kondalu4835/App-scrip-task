@@ -36,3 +36,16 @@
   color: var(--color-text-secondary);
   font-weight: 500;
 }
+
+.emptyState {
+  padding: var(--spacing-lg) var(--container-padding);
+  margin: 0 auto;
+  max-width: var(--container-max);
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.emptyState p {
+  margin: 0;
+  font-size: 1rem;
+}

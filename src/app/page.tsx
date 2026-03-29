@@ -13,16 +13,18 @@ export default async function HomePage() {
     getCategories(),
   ]);
 
-  // Build JSON-LD schema for SEO
-  const productSchema = buildProductSchema(products);
+  // Build JSON-LD schema for SEO (only if we have products)
+  const productSchema = products.length > 0 ? buildProductSchema(products) : null;
 
   return (
     <>
       {/* JSON-LD Structured Data for SEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
-      />
+      {productSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+        />
+      )}
 
       <Header />
 
@@ -41,7 +43,13 @@ export default async function HomePage() {
         </nav>
 
         {/* Product listing */}
-        <ProductGrid initialProducts={products} categories={categories} />
+        {products.length > 0 ? (
+          <ProductGrid initialProducts={products} categories={categories} />
+        ) : (
+          <section className={styles.emptyState}> 
+            <p>Unable to load products right now. Please try again later.</p>
+          </section>
+        )}
       </main>
 
       <Footer />

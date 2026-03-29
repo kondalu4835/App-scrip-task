@@ -2,20 +2,31 @@ import { Product } from "@/types";
 
 const API_BASE = "https://fakestoreapi.com";
 
+async function safeFetch<T>(url: string, fallback: T, errorMessage: string): Promise<T> {
+  try {
+    const res = await fetch(url, {
+      next: { revalidate: 3600 },
+    });
+
+    if (!res.ok) {
+      console.warn(`${errorMessage}: status ${res.status}`);
+      return fallback;
+    }
+
+    return (await res.json()) as T;
+  } catch (error) {
+    // Build-time / network issues should not break static generation
+    console.warn(`${errorMessage}:`, error);
+    return fallback;
+  }
+}
+
 export async function getAllProducts(): Promise<Product[]> {
-  const res = await fetch(`${API_BASE}/products`, {
-    next: { revalidate: 3600 }, // ISR: revalidate every hour
-  });
-  if (!res.ok) throw new Error("Failed to fetch products");
-  return res.json();
+  return safeFetch<Product[]>(`${API_BASE}/products`, [], "Failed to fetch products");
 }
 
 export async function getCategories(): Promise<string[]> {
-  const res = await fetch(`${API_BASE}/products/categories`, {
-    next: { revalidate: 3600 },
-  });
-  if (!res.ok) throw new Error("Failed to fetch categories");
-  return res.json();
+  return safeFetch<string[]>(`${API_BASE}/products/categories`, [], "Failed to fetch categories");
 }
 
 export async function getProductsByCategory(
