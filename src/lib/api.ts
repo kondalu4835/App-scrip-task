@@ -2,6 +2,38 @@ import { Product } from "@/types";
 
 const API_BASE = "https://fakestoreapi.com";
 
+const DEFAULT_PRODUCTS: Product[] = [
+  {
+    id: 101,
+    title: "Classic Crewneck T-Shirt",
+    price: 19.99,
+    description: "Comfortable cotton crewneck, available in multiple colors.",
+    category: "men's clothing",
+    image: "https://via.placeholder.com/300x300.png?text=Classic+T-Shirt",
+    rating: { rate: 4.2, count: 89 },
+  },
+  {
+    id: 102,
+    title: "Slim Fit Jeans",
+    price: 49.99,
+    description: "Modern cut denim with lightweight stretch.",
+    category: "men's clothing",
+    image: "https://via.placeholder.com/300x300.png?text=Slim+Jeans",
+    rating: { rate: 4.5, count: 114 },
+  },
+  {
+    id: 103,
+    title: "Everyday Sneakers",
+    price: 64.99,
+    description: "Versatile sneakers for everyday wear.",
+    category: "shoes",
+    image: "https://via.placeholder.com/300x300.png?text=Sneakers",
+    rating: { rate: 4.1, count: 75 },
+  },
+];
+
+const DEFAULT_CATEGORIES = ["men's clothing", "women's clothing", "jewelery", "electronics"];
+
 async function safeFetch<T>(url: string, fallback: T, errorMessage: string): Promise<T> {
   try {
     const res = await fetch(url, {
@@ -22,22 +54,24 @@ async function safeFetch<T>(url: string, fallback: T, errorMessage: string): Pro
 }
 
 export async function getAllProducts(): Promise<Product[]> {
-  return safeFetch<Product[]>(`${API_BASE}/products`, [], "Failed to fetch products");
+  const products = await safeFetch<Product[]>(`${API_BASE}/products`, [], "Failed to fetch products");
+  return products.length ? products : DEFAULT_PRODUCTS;
 }
 
 export async function getCategories(): Promise<string[]> {
-  return safeFetch<string[]>(`${API_BASE}/products/categories`, [], "Failed to fetch categories");
+  const categories = await safeFetch<string[]>(`${API_BASE}/products/categories`, [], "Failed to fetch categories");
+  return categories.length ? categories : DEFAULT_CATEGORIES;
 }
 
 export async function getProductsByCategory(
   category: string
 ): Promise<Product[]> {
-  const res = await fetch(
+  const products = await safeFetch<Product[]>(
     `${API_BASE}/products/category/${encodeURIComponent(category)}`,
-    { next: { revalidate: 3600 } }
+    [],
+    "Failed to fetch products by category"
   );
-  if (!res.ok) throw new Error("Failed to fetch products by category");
-  return res.json();
+  return products.length ? products : DEFAULT_PRODUCTS;
 }
 
 export function formatPrice(price: number | string | undefined | null): string {
