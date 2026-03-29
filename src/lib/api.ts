@@ -201,10 +201,45 @@ export async function getProductsByCategory(category: string): Promise<Product[]
 
 export function formatPrice(price: number | string | undefined | null): string {
   const value = Number(price);
-  if (Number.isNaN(value)) return "--";
+  if (Number.isNaN(value)) {
+    return "--";
+  }
+
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
     minimumFractionDigits: 2,
   }).format(value);
+}
+
+export function buildProductSchema(products: Product[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Women's Fashion Collection",
+    description:
+      "Curated women's fashion — clothing, jewellery and accessories",
+    numberOfItems: products.length,
+    itemListElement: products.slice(0, 10).map((p, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "Product",
+        name: p.title,
+        description: p.description,
+        image: p.image,
+        offers: {
+          "@type": "Offer",
+          price: p.price.toFixed(2),
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: p.rating.rate,
+          reviewCount: p.rating.count,
+        },
+      },
+    })),
+  };
 }
