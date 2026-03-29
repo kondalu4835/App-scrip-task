@@ -8,7 +8,7 @@ const DEFAULT_PRODUCTS: Product[] = [
     price: 19.99,
     description: "Comfortable cotton crewneck, available in multiple colors.",
     category: "men's clothing",
-    image: "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png",
+    image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
     rating: { rate: 4.2, count: 89 },
   },
   {
@@ -26,7 +26,7 @@ const DEFAULT_PRODUCTS: Product[] = [
     price: 64.99,
     description: "Versatile sneakers for everyday wear.",
     category: "shoes",
-    image: "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX695_t.png",
+    image: "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_t.png",
     rating: { rate: 4.1, count: 75 },
   },
   {
@@ -89,7 +89,7 @@ const DEFAULT_PRODUCTS: Product[] = [
     price: 19.99,
     description: "Protective smartphone case with sleek design.",
     category: "electronics",
-    image: "https://fakestoreapi.com/img/71ZtsXNwxJL._AC_UY879_t.png",
+    image: "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_t.png",
     rating: { rate: 4.1, count: 45 },
   },
   {
@@ -98,7 +98,7 @@ const DEFAULT_PRODUCTS: Product[] = [
     price: 74.99,
     description: "Lightweight running shoes for all terrains.",
     category: "shoes",
-    image: "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX695_t.png",
+    image: "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_t.png",
     rating: { rate: 4.3, count: 56 },
   },
   {
@@ -107,7 +107,7 @@ const DEFAULT_PRODUCTS: Product[] = [
     price: 129.99,
     description: "Elegant leather shoes for formal occasions.",
     category: "shoes",
-    image: "https://fakestoreapi.com/img/71LiUpuj6eL._AC_SY695_t.png",
+    image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
     rating: { rate: 4.6, count: 33 },
   },
   {
