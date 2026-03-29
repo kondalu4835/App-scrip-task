@@ -40,12 +40,17 @@ export async function getProductsByCategory(
   return res.json();
 }
 
-export function formatPrice(price: number): string {
+export function formatPrice(price: number | string | undefined | null): string {
+  const value = Number(price);
+  if (Number.isNaN(value)) {
+    return "--";
+  }
+
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
     minimumFractionDigits: 2,
-  }).format(price);
+  }).format(value);
 }
 
 export function buildProductSchema(products: Product[]) {

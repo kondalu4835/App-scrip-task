@@ -14,8 +14,11 @@ export default function ProductCard({ product }: ProductCardProps) {
   const [wishlisted, setWishlisted] = useState(false);
   const [imgError, setImgError] = useState(false);
 
+  const safeRating = product.rating ?? { rate: 0, count: 0 };
+  const safePrice = typeof product.price === "number" ? product.price : Number(product.price) || 0;
+
   /* SEO-friendly image name derived from product title */
-  const seoAltText = `${product.title} – ${product.category} product image`;
+  const seoAltText = `${product.title ?? "Product"} – ${product.category ?? "Uncategorized"} product image`;
 
   return (
     <article className={styles.card} aria-label={product.title}>
@@ -66,15 +69,18 @@ export default function ProductCard({ product }: ProductCardProps) {
         </h2>
 
         <div className={styles.meta}>
-          <div className={styles.rating} aria-label={`Rating: ${product.rating.rate} out of 5, ${product.rating.count} reviews`}>
+          <div
+            className={styles.rating}
+            aria-label={`Rating: ${safeRating.rate} out of 5, ${safeRating.count} reviews`}
+          >
             <StarIcon />
-            <span className={styles.ratingValue}>{product.rating.rate.toFixed(1)}</span>
-            <span className={styles.ratingCount}>({product.rating.count})</span>
+            <span className={styles.ratingValue}>{safeRating.rate.toFixed(1)}</span>
+            <span className={styles.ratingCount}>({safeRating.count})</span>
           </div>
         </div>
 
         <div className={styles.priceRow}>
-          <span className={styles.price}>{formatPrice(product.price)}</span>
+          <span className={styles.price}>{formatPrice(safePrice)}</span>
           <button className={styles.addBtn} aria-label={`Add ${product.title} to cart`}>
             + Add to cart
           </button>
