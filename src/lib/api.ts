@@ -1,14 +1,13 @@
 import { Product } from "@/types";
 
-// Static product data
-const PRODUCTS: Product[] = [
+const DEFAULT_PRODUCTS: Product[] = [
   {
     id: 101,
     title: "Classic Crewneck T-Shirt",
     price: 19.99,
     description: "Comfortable cotton crewneck, available in multiple colors.",
     category: "men's clothing",
-    image: "https://via.placeholder.com/300x300.png?text=Classic+T-Shirt",
+    image: "/images/products/classic-tshirt.png",
     rating: { rate: 4.2, count: 89 },
   },
   {
@@ -17,7 +16,7 @@ const PRODUCTS: Product[] = [
     price: 49.99,
     description: "Modern cut denim with lightweight stretch.",
     category: "men's clothing",
-    image: "https://via.placeholder.com/300x300.png?text=Slim+Jeans",
+    image: "/images/products/slim-fit-jeans.png",
     rating: { rate: 4.5, count: 114 },
   },
   {
@@ -26,7 +25,7 @@ const PRODUCTS: Product[] = [
     price: 64.99,
     description: "Versatile sneakers for everyday wear.",
     category: "shoes",
-    image: "https://via.placeholder.com/300x300.png?text=Sneakers",
+    image: "/images/products/everyday-sneakers.png",
     rating: { rate: 4.1, count: 75 },
   },
   {
@@ -35,174 +34,182 @@ const PRODUCTS: Product[] = [
     price: 129.99,
     description: "Elegant gold necklace, perfect for evening wear.",
     category: "jewelery",
-    image: "https://via.placeholder.com/300x300.png?text=Gold+Necklace",
+    image: "/images/products/gold-necklace.png",
     rating: { rate: 4.8, count: 42 },
   },
   {
     id: 105,
     title: "Silver Hoop Earrings",
     price: 39.99,
-    description: "Classic silver hoop earrings for daily wear.",
+    description: "Stylish silver hoop earrings, timeless design.",
     category: "jewelery",
-    image: "https://via.placeholder.com/300x300.png?text=Silver+Hoop+Earrings",
+    image: "/images/products/silver-hoop-earrings.png",
     rating: { rate: 4.4, count: 30 },
   },
   {
     id: 106,
     title: "Leather Handbag",
     price: 199.99,
-    description: "High-quality leather handbag with spacious interior.",
+    description: "Premium leather handbag with spacious compartments.",
     category: "women's clothing",
-    image: "https://via.placeholder.com/300x300.png?text=Leather+Handbag",
+    image: "/images/products/leather-handbag.png",
     rating: { rate: 4.7, count: 52 },
   },
   {
     id: 107,
-    title: "Summer Dress",
-    price: 59.99,
-    description: "Lightweight and comfortable summer dress.",
+    title: "Cotton Summer Dress",
+    price: 34.99,
+    description: "Lightweight cotton dress, perfect for warm weather.",
     category: "women's clothing",
-    image: "https://via.placeholder.com/300x300.png?text=Summer+Dress",
-    rating: { rate: 4.5, count: 47 },
+    image: "/images/products/cotton-summer-dress.png",
+    rating: { rate: 4.3, count: 60 },
   },
   {
     id: 108,
-    title: "Smart Watch",
+    title: "Sports Watch",
     price: 149.99,
-    description: "Track fitness and notifications with this sleek smartwatch.",
+    description: "Water-resistant sports watch with multiple functions.",
     category: "electronics",
-    image: "https://via.placeholder.com/300x300.png?text=Smart+Watch",
-    rating: { rate: 4.3, count: 66 },
+    image: "/images/products/sports-watch.png",
+    rating: { rate: 4.6, count: 88 },
   },
   {
     id: 109,
     title: "Bluetooth Headphones",
     price: 89.99,
-    description: "Noise-cancelling over-ear headphones with long battery life.",
+    description: "Noise-cancelling wireless headphones with long battery life.",
     category: "electronics",
-    image: "https://via.placeholder.com/300x300.png?text=Bluetooth+Headphones",
-    rating: { rate: 4.6, count: 88 },
+    image: "/images/products/bluetooth-headphones.png",
+    rating: { rate: 4.5, count: 101 },
   },
   {
     id: 110,
-    title: "Sports Sandals",
-    price: 34.99,
-    description: "Comfortable sandals suitable for hiking and casual wear.",
-    category: "shoes",
-    image: "https://via.placeholder.com/300x300.png?text=Sports+Sandals",
-    rating: { rate: 4.2, count: 39 },
+    title: "Smartphone Case",
+    price: 19.99,
+    description: "Durable phone case with shock absorption.",
+    category: "electronics",
+    image: "/images/products/smartphone-case.png",
+    rating: { rate: 4.0, count: 45 },
   },
   {
     id: 111,
-    title: "Wool Sweater",
-    price: 79.99,
-    description: "Warm wool sweater, ideal for winter.",
-    category: "men's clothing",
-    image: "https://via.placeholder.com/300x300.png?text=Wool+Sweater",
-    rating: { rate: 4.3, count: 51 },
+    title: "Running Shoes",
+    price: 74.99,
+    description: "Lightweight running shoes with breathable material.",
+    category: "shoes",
+    image: "/images/products/running-shoes.png",
+    rating: { rate: 4.2, count: 79 },
   },
   {
     id: 112,
-    title: "Formal Shirt",
-    price: 34.99,
-    description: "Perfect shirt for office or formal occasions.",
-    category: "men's clothing",
-    image: "https://via.placeholder.com/300x300.png?text=Formal+Shirt",
-    rating: { rate: 4.1, count: 41 },
-  },
-  {
-    id: 113,
-    title: "Evening Gown",
-    price: 249.99,
-    description: "Elegant evening gown for special occasions.",
-    category: "women's clothing",
-    image: "https://via.placeholder.com/300x300.png?text=Evening+Gown",
-    rating: { rate: 4.9, count: 22 },
-  },
-  {
-    id: 114,
-    title: "Diamond Ring",
-    price: 499.99,
-    description: "Sparkling diamond ring for engagements or gifts.",
-    category: "jewelery",
-    image: "https://via.placeholder.com/300x300.png?text=Diamond+Ring",
-    rating: { rate: 5.0, count: 12 },
-  },
-  {
-    id: 115,
-    title: "Tablet Pro",
-    price: 299.99,
-    description: "High-performance tablet for work and entertainment.",
-    category: "electronics",
-    image: "https://via.placeholder.com/300x300.png?text=Tablet+Pro",
-    rating: { rate: 4.4, count: 36 },
-  },
-  {
-    id: 116,
-    title: "Running Shoes",
-    price: 74.99,
-    description: "Lightweight shoes for running and fitness.",
+    title: "Formal Leather Shoes",
+    price: 109.99,
+    description: "Elegant leather shoes for formal occasions.",
     category: "shoes",
-    image: "https://via.placeholder.com/300x300.png?text=Running+Shoes",
-    rating: { rate: 4.2, count: 63 },
-  },
-  {
-    id: 117,
-    title: "Leather Belt",
-    price: 24.99,
-    description: "Durable leather belt for everyday use.",
-    category: "men's clothing",
-    image: "https://via.placeholder.com/300x300.png?text=Leather+Belt",
-    rating: { rate: 4.3, count: 27 },
-  },
-  {
-    id: 118,
-    title: "Sunglasses",
-    price: 49.99,
-    description: "Stylish sunglasses to protect your eyes from the sun.",
-    category: "women's clothing",
-    image: "https://via.placeholder.com/300x300.png?text=Sunglasses",
+    image: "/images/products/formal-leather-shoes.png",
     rating: { rate: 4.5, count: 33 },
   },
   {
-    id: 119,
-    title: "Backpack",
+    id: 113,
+    title: "Denim Jacket",
     price: 59.99,
-    description: "Durable backpack for school or travel.",
+    description: "Classic denim jacket with button closure.",
     category: "men's clothing",
-    image: "https://via.placeholder.com/300x300.png?text=Backpack",
-    rating: { rate: 4.4, count: 48 },
+    image: "/images/products/denim-jacket.png",
+    rating: { rate: 4.1, count: 50 },
+  },
+  {
+    id: 114,
+    title: "Wool Scarf",
+    price: 29.99,
+    description: "Soft wool scarf, warm and stylish.",
+    category: "women's clothing",
+    image: "/images/products/wool-scarf.png",
+    rating: { rate: 4.3, count: 22 },
+  },
+  {
+    id: 115,
+    title: "Casual Sneakers",
+    price: 59.99,
+    description: "Comfortable casual sneakers for everyday wear.",
+    category: "shoes",
+    image: "/images/products/casual-sneakers.png",
+    rating: { rate: 4.0, count: 67 },
+  },
+  {
+    id: 116,
+    title: "Elegant Wristwatch",
+    price: 199.99,
+    description: "Stylish wristwatch with leather strap.",
+    category: "electronics",
+    image: "/images/products/elegant-wristwatch.png",
+    rating: { rate: 4.7, count: 44 },
+  },
+  {
+    id: 117,
+    title: "Silk Blouse",
+    price: 39.99,
+    description: "Smooth silk blouse with delicate detailing.",
+    category: "women's clothing",
+    image: "/images/products/silk-blouse.png",
+    rating: { rate: 4.5, count: 29 },
+  },
+  {
+    id: 118,
+    title: "Leather Belt",
+    price: 24.99,
+    description: "Durable leather belt with classic buckle.",
+    category: "men's clothing",
+    image: "/images/products/leather-belt.png",
+    rating: { rate: 4.3, count: 41 },
+  },
+  {
+    id: 119,
+    title: "Diamond Ring",
+    price: 499.99,
+    description: "Elegant diamond ring with white gold band.",
+    category: "jewelery",
+    image: "/images/products/diamond-ring.png",
+    rating: { rate: 4.9, count: 12 },
   },
   {
     id: 120,
-    title: "Perfume",
-    price: 39.99,
-    description: "Fragrant perfume for daily use.",
-    category: "jewelery",
-    image: "https://via.placeholder.com/300x300.png?text=Perfume",
-    rating: { rate: 4.3, count: 21 },
+    title: "Winter Coat",
+    price: 149.99,
+    description: "Warm winter coat with insulated lining.",
+    category: "women's clothing",
+    image: "/images/products/winter-coat.png",
+    rating: { rate: 4.4, count: 37 },
   },
 ];
 
-// Static categories
-const CATEGORIES = ["men's clothing", "women's clothing", "jewelery", "electronics", "shoes"];
+const DEFAULT_CATEGORIES = [
+  "men's clothing",
+  "women's clothing",
+  "jewelery",
+  "electronics",
+  "shoes",
+];
 
-// Export functions
 export async function getAllProducts(): Promise<Product[]> {
-  return PRODUCTS;
+  // Since we removed API, just return default products
+  return DEFAULT_PRODUCTS;
 }
 
 export async function getCategories(): Promise<string[]> {
-  return CATEGORIES;
+  return DEFAULT_CATEGORIES;
 }
 
 export async function getProductsByCategory(category: string): Promise<Product[]> {
-  return PRODUCTS.filter((p) => p.category === category);
+  return DEFAULT_PRODUCTS.filter((p) => p.category === category);
 }
 
 export function formatPrice(price: number | string | undefined | null): string {
   const value = Number(price);
-  if (Number.isNaN(value)) return "--";
+  if (Number.isNaN(value)) {
+    return "--";
+  }
+
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
